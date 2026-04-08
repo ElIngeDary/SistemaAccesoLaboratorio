@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestión de Horario Académico — Laboratorios</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet"/>
+   
+</head>
+<body>
+
+<!-- ═══════════════ HEADER ═══════════════ -->
+<header>
+  <div class="header-brand">
+    <div class="logo-wrap">
+      <div class="stars">
+        <span>★</span><span>★</span>
+      </div>
+      <i class="fas fa-book-open"></i>
+    </div>
+    <h1>Laboratorios</h1>
+  </div>
+  <div class="header-avatar" title="Perfil">
+    <i class="fas fa-user"></i>
+  </div>
+</header>
+
+<!-- ═══════════════ BODY ═══════════════ -->
+<div class="app-body">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <a class="nav-item {{ 'active' if segmento_activo == 'dashboard' else '' }}" href="/dashboard"><i class="fas fa-house"></i> Dashboard</a>
+    <a class="nav-item {{ 'active' if segmento_activo == 'usuarios' else '' }}" href="/usuarios"><i class="fas fa-users"></i> Usuarios</a>
+    <a class="nav-item {{ 'active' if segmento_activo == 'laboratorios' else '' }}" href="/laboratorios"><i class="fas fa-desktop"></i> Laboratorios</a>
+    <a class="nav-item {{ 'active' if segmento_activo == 'horario' else '' }}" href="/"><i class="fas fa-calendar-days"></i> Horario Académico</a>
+    <a class="nav-item {{ 'active' if segmento_activo == 'reservas' else '' }}" href="/reservas"><i class="fas fa-calendar-check"></i> Reservas</a>
+    <a class="nav-item {{ 'active' if segmento_activo == 'registros' else '' }}" href="/registros"><i class="fas fa-file-lines"></i> Registros</a>
+    <a class="nav-item {{ 'active' if segmento_activo == 'reportes' else '' }}" href="/reportes"><i class="fas fa-magnifying-glass-chart"></i> Reportes</a>
+    <a class="nav-item {{ 'active' if segmento_activo == 'configuracion' else '' }}" href="/configuracion"><i class="fas fa-gear"></i> Configuración</a>
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+    <h2 class="page-title">Configuración del Sistema</h2>
+    <div style="max-width: 600px; background: var(--white); padding: 24px; border-radius: 12px; border: 1px solid var(--border);">
+        <div style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid var(--border);">
+            <h4 style="color: var(--navy);">General</h4>
+            <p style="color: var(--text-muted); font-size: 13px;">Ajustes globales del prototipo.</p>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <span>Notificaciones por correo</span>
+            <div style="width: 40px; height: 20px; background: var(--border); border-radius: 10px; position: relative;"></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span>Modo de Mantenimiento</span>
+            <div style="width: 40px; height: 20px; background: var(--border); border-radius: 10px;"></div>
+        </div>
+    </div>
+  </main>
+</div> 
+</body>
+</html>

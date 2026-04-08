@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestión de Horario Académico — Laboratorios</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet"/>
+   
+</head>
+<body>
+
+<!-- ═══════════════ HEADER ═══════════════ -->
+<header>
+  <div class="header-brand">
+    <div class="logo-wrap">
+      <div class="stars">
+        <span>★</span><span>★</span>
+      </div>
+      <i class="fas fa-book-open"></i>
+    </div>
+    <h1>Laboratorios</h1>
+  </div>
+  <div class="header-avatar" title="Perfil">
+    <i class="fas fa-user"></i>
+  </div>
+</header>
+
+<!-- ═══════════════ BODY ═══════════════ -->
+<div class="app-body">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <a class="nav-item {{ 'active' if segmento_activo == 'dashboard' else '' }}" href="/dashboard"><i class="fas fa-house"></i> Dashboard</a>
+    <a class="nav-item {{ 'active' if segmento_activo == 'usuarios' else '' }}" href="/usuarios"><i class="fas fa-users"></i> Usuarios</a>
+    <a class="nav-item {{ 'active' if segmento_activo == 'laboratorios' else '' }}" href="/laboratorios"><i class="fas fa-desktop"></i> Laboratorios</a>
+    <a class="nav-item {{ 'active' if segmento_activo == 'horario' else '' }}" href="/"><i class="fas fa-calendar-days"></i> Horario Académico</a>
+    <a class="nav-item {{ 'active' if segmento_activo == 'reservas' else '' }}" href="/reservas"><i class="fas fa-calendar-check"></i> Reservas</a>
+    <a class="nav-item {{ 'active' if segmento_activo == 'registros' else '' }}" href="/registros"><i class="fas fa-file-lines"></i> Registros</a>
+    <a class="nav-item {{ 'active' if segmento_activo == 'reportes' else '' }}" href="/reportes"><i class="fas fa-magnifying-glass-chart"></i> Reportes</a>
+    <a class="nav-item {{ 'active' if segmento_activo == 'configuracion' else '' }}" href="/configuracion"><i class="fas fa-gear"></i> Configuración</a>
+  </aside>
+
+  <!-- MAIN -->
+    <main>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h2 class="page-title">Gestión de Usuarios</h2>
+            <button style="padding: 10px 20px; background: var(--navy); color: var(--white); border: none; border-radius: 8px; cursor: pointer;">
+                <i class="fas fa-user-plus"></i> Nuevo Usuario
+            </button>
+        </div>
+
+        <div style="background: var(--white); border-radius: 12px; border: 1px solid var(--border); overflow: hidden;">
+            <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                <thead style="background: #f8f9fa;">
+                    <tr>
+                        <th style="padding: 15px; border-bottom: 1px solid var(--border);">Nombre</th>
+                        <th style="padding: 15px; border-bottom: 1px solid var(--border);">Rol</th>
+                        <th style="padding: 15px; border-bottom: 1px solid var(--border);">Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 15px; border-bottom: 1px solid var(--border);">Administrador Principal</td>
+                        <td style="padding: 15px; border-bottom: 1px solid var(--border);">Admin</td>
+                        <td style="padding: 15px; border-bottom: 1px solid var(--border); color: var(--curso-reg);">Activo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div> 
+</body>
+</html>
